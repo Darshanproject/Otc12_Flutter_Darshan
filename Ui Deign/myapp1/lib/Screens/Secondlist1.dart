@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp1/Screens/form.dart';
+
 
 class DyList extends StatefulWidget {
   const DyList({super.key});
@@ -18,7 +18,7 @@ class _DyListState extends State<DyList> {
         itemBuilder: (context ,index){
           return InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Details()));
+              // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Details()));
             },
             child: ListTile(
               title: Text("Items $index"),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getmyapp/Coustom_Widgets/Bg_Screen.dart';
 import 'package:getmyapp/Coustom_Widgets/Text_Filed.dart';
+import 'package:getmyapp/Coustom_Widgets/home_Button.dart';
 
 class Second_Screen extends StatefulWidget {
   const Second_Screen({super.key});
@@ -31,7 +32,9 @@ class _Second_ScreenState extends State<Second_Screen> {
                     children: [
                       CustomTextFiled(Hint: "Name" ,la_text:"Name" ),
                       SizedBox(height: 25,),
-                      CustomTextFiled(Hint: "Email" ,la_text:"Email" )
+                      CustomTextFiled(Hint: "Email" ,la_text:"Email" ),
+                      SizedBox(height: 25,),
+                      homeButton()
                     ],
                   ),
                 )

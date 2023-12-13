@@ -1,8 +1,10 @@
+import 'package:myapp/HomeScreen/Components/featured_buttons.dart';
 import 'package:myapp/WidgetsCommon/our_button.dart';
 import 'package:myapp/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:myapp/consts/lists.dart';
 
 class ItemDetails extends StatelessWidget {
   final String? title;
@@ -199,6 +201,37 @@ class ItemDetails extends StatelessWidget {
                         .text
                         .color(darkFontGrey)
                         .make(),
+                        10.heightBox,
+                        ListView(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          children: List.generate(Itemsdetailsbuttonlist.length, (index) => ListTile(
+                            title: "${Itemsdetailsbuttonlist[index]}".text.fontFamily(semibold).color(darkFontGrey).make(),
+                            trailing: Icon(Icons.arrow_forward),
+                          )),
+                        ),
+                        10.heightBox,
+                        ////Product You may like 
+                        productsyoumaylike.text.fontFamily(bold).size(16).color(darkFontGrey).make(),
+                        20.heightBox,
+                         SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          3,
+                          (index) => Column(
+                                children: [
+                                  featuredButton(
+                                      icon: featuredImages1[index],
+                                      title: featuredTitel1[index]),
+                                  10.heightBox,
+                                  featuredButton(
+                                      icon: featuredImages2[index],
+                                      title: featuredTitel2[index]),
+                                ],
+                              )).toList(),
+                    ),
+                  ),
                   ]),
             ),
           )),

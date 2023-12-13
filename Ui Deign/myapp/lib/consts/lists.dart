@@ -44,3 +44,6 @@ const categoryTitleList = [
   womenclothing,
   furniture
 ];
+const Itemsdetailsbuttonlist=[
+  video,reviwes,privacyPolicy,returnpolicy,supportPolicy
+];

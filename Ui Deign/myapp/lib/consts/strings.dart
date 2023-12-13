@@ -49,3 +49,7 @@ const womenclothing = "Women Clotheing",
     jewelery = "Jewelery",
     cellphone = "CellPhone & Tab",
     furniture = "Furniture";
+
+
+///items categroie string
+ const video="Video",reviwes="Reviwes",sellerpolicy="Seller Policy",returnpolicy="Return Policy",supportPolicy="Support Policy",productsyoumaylike="Product You May Like";

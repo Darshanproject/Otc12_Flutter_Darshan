@@ -48,9 +48,10 @@ class _SplashScreenState extends State<SplashScreen> {
             10.heightBox,
             appname.text.fontFamily(bold).size(22).white.make(),
             5.heightBox,
-            appversion.text.white.make(),
+           
             Spacer(),
             credits.text.white.fontFamily(semibold).make(),
+             appversion.text.white.make(),
             30.heightBox,
             //our splash screen is allmost ready here
           ],

@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myeapp/Auth/LoginPages/Signing_Screen.dart';
 import 'package:myeapp/Coustom_Widegts/Coustem_TextField.dart';
 import 'package:myeapp/Coustom_Widegts/Home_Button.dart';
 import 'package:myeapp/Coustom_Widegts/Our_homebutton.dart';
 import 'package:myeapp/Coustom_Widegts/Screens_back.dart';
+import 'package:myeapp/Home%20Screens/Account%20Screen/Account_Screen.dart';
 import 'package:myeapp/consts/consts.dart';
 import 'package:myeapp/consts/lists.dart';
 
@@ -25,8 +28,9 @@ class _Login_ScreenState extends State<Login_Screen> {
           
           children: [
             
-            (context.screenHeight*0.1).heightBox,
+            (context.screenHeight*0.2).heightBox,
             Column(
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //  "Loginfromhere".text.size(72).make(),
                 Custom_TextFiled(
@@ -35,7 +39,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                   hinttext: name,
                 ),
                 Custom_TextFiled(
-                  Title: password,
+                  Title: password, 
                   controller: _password,
                   hinttext: password,
                 ),
@@ -46,9 +50,15 @@ class _Login_ScreenState extends State<Login_Screen> {
                 5.heightBox,
                 Our_button(
                   Title: login,
-                  onPress: (){}
+                  color: lightGrey,
+                  onPress: ()=>Get.to(Account_Screen())
                 ),
                 10.heightBox,
+                Our_button(
+                  Title: signup,
+                  color: redColor,
+                  onPress: ()=>Get.to(Signing_Screen())
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(3, (index) => Padding(padding: EdgeInsets.all(8),child: CircleAvatar(radius: 25,backgroundColor: lightGrey,child: Image.asset(socialIconList[index],width: 30,),),)),

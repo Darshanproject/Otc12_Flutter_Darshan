@@ -1,5 +1,6 @@
 
 import 'package:myeapp/Auth/LoginPages/Login_Screen.dart';
+import 'package:myeapp/Auth/LoginPages/Signing_Screen.dart';
 import 'package:myeapp/Coustom_Widegts/Applo_Screen.dart';
 import 'package:myeapp/consts/colors.dart';
 import 'package:myeapp/consts/consts.dart';
@@ -17,7 +18,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   //craeting a function overe here
   changeScreen() {
-    Future.delayed(Duration(seconds: 12), () {
+    Future.delayed(Duration(seconds: 3), () {
       //using getx here
       Get.to(() => const Login_Screen ());
     });

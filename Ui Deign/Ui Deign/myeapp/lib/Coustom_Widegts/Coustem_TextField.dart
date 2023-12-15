@@ -3,6 +3,8 @@ import 'package:myeapp/consts/consts.dart';
 
 Widget Custom_TextFiled({String? Title,controller,String? hinttext}){
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Title!.text.color(redColor).fontFamily(semibold).size(16).makeCentered(),
       5.heightBox,

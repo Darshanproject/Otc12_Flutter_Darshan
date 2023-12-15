@@ -44,3 +44,6 @@ const categoryTitleList = [
   womenclothing,
   furniture
 ];
+const MyprofileList=[contact,myorder,mywishlist];
+
+const MyprofilePicList =[icMenu,icOrder,icArrow];

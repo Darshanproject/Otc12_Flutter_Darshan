@@ -6,6 +6,7 @@ import 'package:myeapp/Coustom_Widegts/Home_Button.dart';
 import 'package:myeapp/Coustom_Widegts/Our_homebutton.dart';
 import 'package:myeapp/Coustom_Widegts/Screens_back.dart';
 import 'package:myeapp/Home%20Screens/Account%20Screen/Account_Screen.dart';
+import 'package:myeapp/Home%20Screens/Home%20Screen/Home.dart';
 import 'package:myeapp/consts/consts.dart';
 import 'package:myeapp/consts/lists.dart';
 
@@ -51,7 +52,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                 Our_button(
                   Title: login,
                   color: lightGrey,
-                  onPress: ()=>Get.to(Account_Screen())
+                  onPress: ()=>Get.to(Home())
                 ),
                 10.heightBox,
                 Our_button(

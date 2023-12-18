@@ -2,6 +2,7 @@
 import 'package:myeapp/Auth/LoginPages/Login_Screen.dart';
 import 'package:myeapp/Auth/LoginPages/Signing_Screen.dart';
 import 'package:myeapp/Coustom_Widegts/Applo_Screen.dart';
+import 'package:myeapp/Home%20Screens/Home%20Screen/Home.dart';
 import 'package:myeapp/consts/colors.dart';
 import 'package:myeapp/consts/consts.dart';
 import 'package:flutter/material.dart';

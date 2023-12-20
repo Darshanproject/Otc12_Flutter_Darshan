@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
       BottomNavigationBarItem(icon: Image.asset(icProfile,width: 26,),label: account),
     ];
     var navBody=[
-      Home_Screen(),
+      HomeScreen(),
       categories_Scree(),
       Cart_Screen(),
       Account_Screen()

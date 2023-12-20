@@ -47,3 +47,8 @@ const categoryTitleList = [
 const MyprofileList=[contact,myorder,mywishlist];
 
 const MyprofilePicList =[icMenu,icOrder,icArrow];
+
+
+
+
+const listofhomescreen = [menClothingFashion,womenclothing,womendress];

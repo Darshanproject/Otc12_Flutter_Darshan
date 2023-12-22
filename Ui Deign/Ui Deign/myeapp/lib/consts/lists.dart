@@ -52,3 +52,48 @@ const MyprofilePicList =[icMenu,icOrder,icArrow];
 
 
 const listofhomescreen = [menClothingFashion,womenclothing,womendress];
+
+
+
+const categoryList1 = [
+  imgFc1,
+  imgFc2,
+  imgFc3,
+  imgFc4,
+  imgFc5,
+  imgFc6,
+  imgFc7,
+  imgFc8,
+  imgFc9
+];
+const categoryTitleList1 = [
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  menClothingFashion,
+  compAccess,
+
+  automobile,
+  kidstoys,
+  sports,
+  cellphone,
+  jewelery,
+  womenclothing,
+  furniture
+];
+const Itemsdetailsbuttonlist = [
+  video,
+  reviwes,
+  privacyPolicy,
+  returnpolicy,
+  supportPolicy
+];
+
+const ProfileList = [myorders, whislist, messages, contact];
+const ProfileIcons = [icOrder, icMenu, icMessages, icOrder];

@@ -51,4 +51,4 @@ const womenclothing = "Women Clotheing",
     sports = "Sports",
     jewelery = "Jewelery",
     cellphone = "CellPhone & Tab",
-    furniture = "Furniture";
+    furniture = "Furniture",video = "Video",returnpolicy = " Return Policy",supportPolicy="Support Policy",reviwes="Reviwes",myorders="My Orders",whislist="My WishList",messages="Messages";

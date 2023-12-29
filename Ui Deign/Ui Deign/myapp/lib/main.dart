@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final String url_ ="https://github.com/Darshanproject/Otc12_Flutter_Darshan";
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Container(
             child: ElevatedButton(onPressed: (){
-Lunch(url_ as Uri);
+_launchURL();
             },child: Text("Open Corme"),),
           ),
         ),
@@ -30,14 +30,17 @@ Lunch(url_ as Uri);
     );
   }
 }
-void Lunch(Uri url_) async {
-  
-  if(await  launchUrl(url_,mode: LaunchMode.externalApplication) ){
-    await launchUrl(url_);
-  }else{
-    throw 'Coudnot lunch your chorme $url_';
+void _launchURL() async {
+  const url = 'https://github.com/Darshanproject/Otc12_Flutter_Darshan';
+  // ignore: deprecated_member_use
+  if (await canLaunch(url)) {
+    // ignore: deprecated_member_use
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
+
 class Alert_Box extends StatelessWidget {
   const Alert_Box({super.key});
 

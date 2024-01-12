@@ -1,6 +1,12 @@
+import 'dart:convert';
+// import 'dart:js_interop';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:myapi/Screens/List_Showing_Data.dart';
+// import 'package:myapi/Screens/List_Showing_Data.dart';
+import 'package:myapi/Screens1/Home_Page.dart';
+// import 'package:path/path.dart';
 class Insert_Screen extends StatefulWidget {
   const Insert_Screen({super.key});
 
@@ -10,13 +16,17 @@ class Insert_Screen extends StatefulWidget {
 
 class _Insert_ScreenState extends State<Insert_Screen> {
   bool choice = true;
+  bool value = false;
+  var password1;
+  // late  String? password1;
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController surname = TextEditingController();
+  TextEditingController password = TextEditingController();
   Future <void> insertdata() async{
     http.Response response;
     response = await http.post(Uri.parse('https://database20810.000webhostapp.com/FlutterCrude/insert.php'),
-    body: {'name':name.text,'surname':surname.text,'email':email.text}
+    body: {'name':name.text,'surname':surname.text,'email':email.text,'password':password.text}
     );
     if (response.statusCode == 200) {
         AlertDialog(
@@ -27,7 +37,16 @@ class _Insert_ScreenState extends State<Insert_Screen> {
         content: Text("There is some error"),
       );
     }
+     String hashPassword(password) {
+    final key = utf8.encode('your_secret_key'); // Replace with a strong secret key
+    final bytes = utf8.encode(password);
+    final hmacSha256 = Hmac(sha256, key);
+    var digest = hmacSha256.convert(bytes);
+    return digest = password;
   }
+  final String password1 = hashPassword(password);
+  }
+  
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -36,7 +55,8 @@ class _Insert_ScreenState extends State<Insert_Screen> {
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 30),
         child: Column(
           children: [
-              TextField(
+              TextFormField(
+              // validator: Validate(),
                 controller: name,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -78,6 +98,7 @@ class _Insert_ScreenState extends State<Insert_Screen> {
               ),
 
                             TextField(
+                              controller: password,
                               obscureText: choice,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -96,17 +117,45 @@ class _Insert_ScreenState extends State<Insert_Screen> {
                   }, icon: Icon(Icons.visibility_off))
                 ),
               ),
+             Checkbox(value: this.value, onChanged: ( newvalue){
+              setState(() {
+                value = newvalue!;  
+              });
+              
+             }),
               Spacer(),
               SizedBox(
                 width:  MediaQuery.of(context).size.width - 40,
-                child: ElevatedButton(onPressed: ()async {
-                await  insertdata();
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>MyListShowing()));
-                },child: Text("Send Data"),),
+                child: value != false?  ElevatedButton(  onPressed: ()async {
+                
+                  if (name.text == "" && email.text == "" && surname.text == "") {  
+                      return show();
+                  }else{
+                    await insertdata();
+                  }
+                  setState(() {
+                    print(());
+                  });
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Home_Page1()));
+                },child: Text("Send Data"),):ElevatedButton(onPressed: (){}, child: Text(""))
               )
           ],
         ),
       ),
     );
   }
+  Validate(){
+  if(name.text == ""  && surname.text == "" && email.text == ""){
+    return null;
+  }
+}
+}
+
+show(){
+  return AlertDialog(
+    content: Text("You have not filled name email or surname prperly"),
+    actions: [
+      TextButton(onPressed: (){}, child: Text("Ok"))
+    ],
+  );
 }

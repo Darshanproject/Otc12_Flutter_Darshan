@@ -74,6 +74,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:myapi/Screens1/Edit.dart';
 import 'package:myapi/Screens1/Insert.dart';
 
 class Home_Page1 extends StatefulWidget {
@@ -127,10 +128,15 @@ class _Home_Page1State extends State<Home_Page1> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final item = snapshot.data![index];
-                return ListTile(
-                  title: Text(item['name'].toString()),
-                  subtitle: Text(item['email'].toString()),
-                  leading: Text(item['id'].toString()),
+                return InkWell(
+                  onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Update_Screen(name: item['name'], email: item['email'],id: item['id'],)));
+                  },
+                  child: ListTile(
+                    title: Text(item['name'].toString()),
+                    subtitle: Text(item['email'].toString()),
+                    leading: Text(item['id'].toString()),
+                  ),
                 );
               },
             );
@@ -142,6 +148,38 @@ class _Home_Page1State extends State<Home_Page1> {
      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Insert_Screen()));
         },
         child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+
+class Update_Screen extends StatelessWidget {
+  const Update_Screen({super.key,required this.name,required this.email,required this.id});
+  final String name;
+  final String email;
+  final int id;
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text(name),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Text(name),
+          Text(email),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 20 ,vertical: 5),child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Edit(name: name,  email: email ,id: id)));
+              }, child: Text("Edit")),
+              TextButton(onPressed: (){}, child: Text("Delete")),
+            ],
+          ),)
+        ],
       ),
     );
   }

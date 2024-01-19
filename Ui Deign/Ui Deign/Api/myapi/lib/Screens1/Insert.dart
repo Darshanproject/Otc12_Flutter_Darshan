@@ -131,12 +131,13 @@ class _Insert_ScreenState extends State<Insert_Screen> {
                   if (name.text == "" && email.text == "" && surname.text == "") {  
                       return show();
                   }else{
-                    await insertdata();
+                     insertdata();
+                     await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Home_Page1()));
                   }
                   setState(() {
                     print(());
                   });
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Home_Page1()));
+              
                 },child: Text("Send Data"),):ElevatedButton(onPressed: (){}, child: Text(""))
               )
           ],

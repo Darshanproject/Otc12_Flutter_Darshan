@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.6
   velocity_x: ^4.1.2
+  firebase_core: ^2.25.2
+  firebase_auth: ^4.17.2
+  cloud_firestore: ^4.15.2
+  firebase_storage: ^11.6.3
 
 dev_dependencies:
   flutter_test:

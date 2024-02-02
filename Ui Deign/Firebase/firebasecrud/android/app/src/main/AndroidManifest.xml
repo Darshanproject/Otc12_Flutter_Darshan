@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="firebasecrud"
+        android:label="Vimal"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/tom">
         <activity
             android:name=".MainActivity"
             android:exported="true"

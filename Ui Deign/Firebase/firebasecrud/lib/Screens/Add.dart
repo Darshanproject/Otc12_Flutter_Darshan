@@ -30,18 +30,6 @@ class _Add_StudentsState extends State<Add_Students> {
     .catchError((error)=>ScaffoldMessenger.of(context).showSnackBar(   SnackBar(content: Text("Failed to Add user $error"))));
   }
   @override
-  void dispose(){
-    name.dispose();
-    email.dispose();
-    surname.dispose();
-    pass.dispose();
-  }
-  clearText(){
-    name.clear();
-    email.clear();
-    surname.clear();
-    pass.clear();
-  }
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Form(
@@ -134,7 +122,7 @@ class _Add_StudentsState extends State<Add_Students> {
                     surnamesend = surname.text;
                     passsend = pass.text;
                     adduser();
-                    clearText();
+                    // clearText();
                    });
                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Home_page()));
                   }
